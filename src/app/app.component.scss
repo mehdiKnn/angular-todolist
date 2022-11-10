@@ -1,0 +1,37 @@
+@mixin flex($justify: center, $align: center, $direction: column) {
+    display: flex;
+    flex-direction: $direction;
+    justify-content: $justify;
+    align-items: $align;
+}
+
+#root {
+    background-color: #182747;
+    color: #D8D8D8;
+    font-family: 'Poppins', sans-serif; 
+}
+#container {
+    width: 100%;
+    height: 100vh;
+}
+
+.task-todo {
+    @include flex;   
+}
+
+.task-done {
+    @include flex;
+
+}
+
+.line {
+    @include flex(flex-start,center,row);
+    width: 40%;
+    height: 5vh;
+    background-color: #2D4263;
+    border-radius: 5px;
+    padding-left: 1em;
+    span {
+        padding-left: 1em;
+    }
+}
