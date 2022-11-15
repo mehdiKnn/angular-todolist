@@ -22,7 +22,28 @@
     </div>
 
 </header>
+
 <section id="main">
+    <div class="side">
+        <div class="category">
+            <div>
+                <mat-icon aria-label="school icon">school</mat-icon>
+            </div>
+            <span> School  </span>
+        </div>
+        <div class="category">
+            <div>
+                <mat-icon aria-label="personnal icon">person_pin</mat-icon>
+            </div>
+            <span> Personnal  </span>
+        </div>
+        <div class="category">
+            <div>
+                <mat-icon aria-label="brush icon">brush</mat-icon>
+            </div>
+            <span> Design  </span>
+        </div>
+    </div>
     <div id="container">
         <div class="addTask">
             <button (click)="addToList()">
@@ -31,14 +52,21 @@
             placeholder="Add a new task ! ">
         </div>
       
-        <div>
-            {{tasks.length}}
+        <div class="taskState">
+            <h2>
+                Tasks - {{tasks.length}}
+            </h2>
         </div>
         <div *ngFor="let task of tasks; let index = index;" 
                 class="task">
                 <input (click)="deleteTask(index)" type="button"
                  class="">
                 {{task}}
+        </div>
+        <div class="taskState">
+            <h2>
+                Completed - {{tasks.length}}
+            </h2>
         </div>
       </div>
 </section>

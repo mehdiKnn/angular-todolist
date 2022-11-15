@@ -9,10 +9,28 @@
 #main {
     background-color: #1B1A17;
     min-height: 100vh;
+    font-family: 'Poppins', sans-serif;
     @include flex;   
+    .side {
+        width: 300px;
+        height: 100vh;
+        background-color: #2C272E;
+        position: absolute;
+        left: 0;
+        top: 60px;
+        .category {
+            width: 200px;
+            height: 90px;
+            @include flex(flex-start, $direction: row);
+            gap: 20px;
+            padding-left: 20px;
+        }
+    }
 }
 
 .navbar {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
     height: 60px;
     background-color: #2C272E;
     @include flex(space-between, $direction: row);
@@ -33,7 +51,11 @@
     }
 }
 
+
+
 #container {
+    position: relative;
+    left: 200px;
     width: 1280px;
     @include flex; 
     .addTask {
@@ -65,9 +87,16 @@
             width: 40px;
             height: 30px;
             background-color: #2C272E;
-            border-color: #94B3FD;
+            border-color: hsl(222, 96%, 79%);
             border-style: solid;
             border-radius: 20px;
+        }
+    }
+    .taskState {
+        width: 700px;
+        @include flex(flex-start, $direction: row); 
+        h2 {
+            font-family: 'Poppins', sans-serif;
         }
     }
     .task {
