@@ -3,35 +3,73 @@
     flex-direction: $direction;
     justify-content: $justify;
     align-items: $align;
+    
 }
 
-#root {
-    background-color: #182747;
-    color: #D8D8D8;
-    font-family: 'Poppins', sans-serif; 
-}
-#container {
-    width: 100%;
+#main {
+    background-color: #1B1A17;
     height: 100vh;
-}
-
-.task-todo {
     @include flex;   
 }
 
-.task-done {
-    @include flex;
-
-}
-
-.line {
-    @include flex(flex-start,center,row);
-    width: 40%;
-    height: 5vh;
-    background-color: #2D4263;
-    border-radius: 5px;
-    padding-left: 1em;
-    span {
-        padding-left: 1em;
+#container {
+    width: 1280px;
+    height: 100vh;
+    @include flex; 
+    .addTask {
+        width: 700px;
+        height: 50px;
+        background-color: #1B1A17;
+        border-color: #2C272E;
+        border-radius: 10px;
+        border-style: solid;
+        border-radius: 5px;
+        margin-bottom: 15px;
+        padding: 10px;
+        @include flex(flex-start,center,row); 
+        gap: 10px;
+        input {
+            width: 500px;
+            height: 30px;
+            color: #EEEBDD;
+            background-color: #1B1A17;
+            border-radius: 10px;
+            border-style: none;
+            outline: none;
+            font-size: 1rem;
+            font-family: 'Poppins', sans-serif;
+            
+            
+        }  
+        button {
+            width: 40px;
+            height: 30px;
+            background-color: #2C272E;
+            border-color: #94B3FD;
+            border-style: solid;
+            border-radius: 20px;
+        }
+    }
+    .task {
+        width: 700px;
+        height: 50px;
+        background-color: #2C272E;
+        border-radius: 5px;
+        margin-bottom: 15px;
+        padding: 15px;
+        @include flex(flex-start,center,row);  
+        gap: 10px; 
+        font-weight: 200;
+        input {
+            width: 40px;
+            height: 30px;
+            background-color: #2C272E;
+            border-color: #A9333A;
+            border-style: solid;
+            border-radius: 20px;
+        }
     }
 }
+
+
+
