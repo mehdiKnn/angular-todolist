@@ -8,13 +8,33 @@
 
 #main {
     background-color: #1B1A17;
-    height: 100vh;
+    min-height: 100vh;
     @include flex;   
+}
+
+.navbar {
+    height: 60px;
+    background-color: #2C272E;
+    @include flex(space-between, $direction: row);
+    padding: 0 20px;
+    .menu {
+        width: 400px;
+        @include flex(space-between, $direction: row);
+        .icon {
+            @include flex(space-between, $direction: row);
+            span {
+                margin-left: 10px;
+            }
+        }
+    }
+    .settings {
+        width: 200px;
+        @include flex(space-between, $direction: row);
+    }
 }
 
 #container {
     width: 1280px;
-    height: 100vh;
     @include flex; 
     .addTask {
         width: 700px;
@@ -26,7 +46,7 @@
         border-radius: 5px;
         margin-bottom: 15px;
         padding: 10px;
-        @include flex(flex-start,center,row); 
+        @include flex(flex-start, $direction: row); 
         gap: 10px;
         input {
             width: 500px;
@@ -57,7 +77,7 @@
         border-radius: 5px;
         margin-bottom: 15px;
         padding: 15px;
-        @include flex(flex-start,center,row);  
+        @include flex(flex-start, $direction: row);  
         gap: 10px; 
         font-weight: 200;
         input {

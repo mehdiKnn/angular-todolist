@@ -7,7 +7,7 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
 
-    public items: string[] = [];
+    public tasks: string[] = [];
   
     public newTask = '';
   
@@ -15,12 +15,12 @@ export class AppComponent {
         if (this.newTask == '') {
         }
         else {
-            this.items.push(this.newTask);
+            this.tasks.push(this.newTask);
             this.newTask = '';
         }
     }
   
     public deleteTask(index: number) {
-        this.items.splice(index, 1);
+        this.tasks.splice(index, 1);
     }
 }

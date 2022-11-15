@@ -1,4 +1,27 @@
 
+<header>
+    <div class="navbar">
+        <div class="menu">
+            <mat-icon aria-label="menu icon">menu</mat-icon>
+            <div class="icon">
+                <mat-icon aria-label="dashboard icon">dashboard</mat-icon>
+                <span> Dashboard  </span>
+            </div>
+            <div class="icon">
+                <mat-icon aria-label="collections icon">collections_bookmark</mat-icon>
+                <span> Collections  </span>
+            </div>
+            
+            
+        </div>
+        <div class="settings">
+            <mat-icon aria-label="search icon">search</mat-icon>
+            <mat-icon aria-label="notif icon">priority_high</mat-icon>
+            <mat-icon aria-label="search icon">query_builder</mat-icon>
+        </div>
+    </div>
+
+</header>
 <section id="main">
     <div id="container">
         <div class="addTask">
@@ -8,11 +31,14 @@
             placeholder="Add a new task ! ">
         </div>
       
-        <div *ngFor="let x of items; let index = index;" 
+        <div>
+            {{tasks.length}}
+        </div>
+        <div *ngFor="let task of tasks; let index = index;" 
                 class="task">
                 <input (click)="deleteTask(index)" type="button"
                  class="">
-                {{x}}
+                {{task}}
         </div>
       </div>
 </section>
