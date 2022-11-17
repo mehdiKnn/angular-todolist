@@ -11,8 +11,8 @@
                 <mat-icon aria-label="collections icon">collections_bookmark</mat-icon>
                 <span> Collections  </span>
             </div>
-            
-            
+
+
         </div>
         <div class="settings">
             <mat-icon aria-label="search icon">search</mat-icon>
@@ -45,28 +45,30 @@
         </div>
     </div>
     <div id="container">
-        <div class="addTask">
-            <button (click)="addToList()">
-            </button>
-            <input [(ngModel)]="newTask" type="text" 
-            placeholder="Add a new task ! ">
+      <div class="addTask">
+        <button (click)="addToList()"></button>
+        <input (keydown.enter)="addToList()" [(ngModel)]="newTask.value" type="text"
+               placeholder="Add a new task ! ">
+      </div>
+
+      <div class="taskList">
+        <h2>
+          Tasks - {{tasksTodo().length}}
+        </h2>
+        <div *ngFor="let task of tasksTodo(); let index = index;"
+             class="task">
+          <input (click)="completeTask(task.id)" type="button">
+          {{task.value}}
         </div>
-      
-        <div class="taskState">
-            <h2>
-                Tasks - {{tasks.length}}
-            </h2>
+      </div>
+      <div class="taskList">
+        <h2>
+          Completed - {{completedTasksLength()}}
+        </h2>
+        <div class="task" *ngFor="let task of tasksDone(); let index = index;">
+          <input type="button">
+          {{task.value}}
         </div>
-        <div *ngFor="let task of tasks; let index = index;" 
-                class="task">
-                <input (click)="deleteTask(index)" type="button"
-                 class="">
-                {{task}}
-        </div>
-        <div class="taskState">
-            <h2>
-                Completed - {{tasks.length}}
-            </h2>
-        </div>
+      </div>
       </div>
 </section>
