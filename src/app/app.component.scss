@@ -52,8 +52,7 @@
 
 
 #container {
-    position: relative;
-    left: 200px;
+
     width: 1280px;
     @include flex;
     .addTask {
